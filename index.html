@@ -135,18 +135,18 @@
 
 
   <!-- Teaser video-->
+
+
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
         <video poster="" id="tree" autoplay controls muted loop height="100%">
           <!-- Your video here -->
-          <source src="static/images/scale-space-collapse-animation.mp4" type="video/mp4">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/vq5w7P8yFxU?si=tiCNDPGCocgtLZAr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </video>
-        <h2 class="subtitle has-text-centered">
-          Tracking the transition of critical features in a scale space. The homological persistent maximum survives
-          across more scales than the other maximum, who is <i>Collapsed</i> with its neighboring saddle point during
-          when the scale changes from fine to coarse.
-        </h2>
+        <!-- <h2 class="subtitle has-text-centered">
+          Recorded 15 mins presentation of our paper.
+        </h2> -->
       </div>
     </div>
   </section>
@@ -184,73 +184,69 @@
   </section>
   <!-- End paper abstract -->
 
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-two-fifths">
-            <div id="example1" class="bal-container-small">
+  <section class="hero">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title">Overview</h2>
+        <div class="content">
+        <p>This project explores a novel pipeline for tracking critical topological features on Triangulated Irregular Networks (TINs) using a scale-space method. By leveraging adaptive triangular meshes, this approach enhances the precision and efficiency of terrain analysis, overcoming limitations of traditional grid-based models.</p>
+        <p>High-resolution terrain analysis is essential for fields like cartography, remote sensing, and land-use planning. Traditional Digital Elevation Models (DEMs) suffer from the trade-off between accuracy and quadratically increasing computational cost. Besides, point cloud becomes widely available and provides better accuracy and flexibility than raster format datasets. Thus, TINs have the capability of adapting to varying data density and topographical complexity and preserve critical details.</p>
 
-              <div class="bal-after">
-                <img src="static/images/grid_40.png">
-                <div class="bal-afterPosition afterLabel">
-                  Regular Grid
-                </div>
-              </div>
-
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="static/images/tin_40.png">
-                  <div class="bal-beforePosition beforeLabel">
-                    TIN
-                  </div>
-                </div>
-              </div>
-
-              <div class="bal-handle">
-                <span class=" handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-
+        <div class="container">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+        <div id="example1" class="bal-container-small">
+          <div class="bal-after">
+            <img src="static/images/grid_40.png">
+            <div class="bal-afterPosition afterLabel">
+              Regular Grid
             </div>
-
-            <h2 class="subtitle has-text-centered">
-              First image description.
-            </h2>
           </div>
 
-          <div class="column is-two-fifths">
-            <div id="example2" class="bal-container-small">
-
-              <div class="bal-after">
-                <img src="static/images/grid_40.png">
-                <div class="bal-afterPosition afterLabel">
-                  Regular Grid
-                </div>
+          <div class="bal-before">
+            <div class="bal-before-inset">
+              <img src="static/images/tin_40.png">
+              <div class="bal-beforePosition beforeLabel">
+                TIN
               </div>
-
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="static/images/tin_40.png">
-                  <div class="bal-beforePosition beforeLabel">
-                    TIN
-                  </div>
-                </div>
-              </div>
-
-              <div class="bal-handle">
-                <span class=" handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-
             </div>
+          </div>
 
-            <h2 class="subtitle has-text-centered">
-              First image description.
-            </h2>
+          <div class="bal-handle">
+            <span class=" handle-left-arrow"></span>
+            <span class="handle-right-arrow"></span>
           </div>
         </div>
+
+        <h4 class="has-text-centered">
+          <i>Comparison between a TIN and a regular grid representation of a terrain with the same number of vertices.</i>
+        </h4>
       </div>
+    </div>
+        <p>Scale space is an analytical framework widely used for image process and analysis. It processes input data from different scales. Using a scale-space method, critical points can be identified and attracked through the scale changes from fine to rough. As illustrated in the following animation, more proninent critical features survive more scales:</p>
+      </div>
+
+        <video poster="" id="tree" autoplay controls muted loop height="80%">
+          <!-- Your video here -->
+          <source src="static/images/scale-space-collapse-animation.mp4" type="video/mp4">
+        </video>
+        <h4 class="has-text-centered">
+          <i>Tracking the transition of critical features in a scale space. The homological persistent maximum survives
+          across more scales than the other maximum, who is <i>Collapsed</i> with its neighboring saddle point during
+          when the scale changes from fine to coarse.</i>
+        </h4>
+
+        <h4 class="subtitle">Our main contributions are three folds: </h4>
+        <ul>
+          <li>Efficient Critical Point Tracking: The project introduces a scale-space method that accurately identifies and tracks critical features, such as peaks, saddles, and pits, across varying scales.</li>
+          <li>Robustness to Variable Terrain Complexity: Utilizing TINs allows for optimized vertex allocation, focusing resources on complex areas while minimizing redundancy in flatter regions.</li>
+          <li>Scale space on TINs: developed the Gaussain smoothing operation over a scalar function defiend on the discrete TIN. With the angle-based re-weighting and virtual neighbors, the scale space can be constructed in parallel on modern GPUs.</li>
+        </ul>
+        <p>More details can be found in our paper and the recorded presentation at <a target="_blank" href="https://www.youtube.com/watch?v=vq5w7P8yFxU"><i>Youtube</i></a>.</p>
+      </div>
+    </div>
+      </div>
+
     </div>
   </section>
 
@@ -345,12 +341,15 @@
   <!-- Paper poster -->
   <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <h2 class="title">Presentation Slides</h2>
+      <h2 class="title">Presentation Slides</h2>
 
-        <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
+      <div class="container">
+        <div class="columns is-centered">
+
+        <iframe src="static/pdfs/full-slides.pdf" width="80%" height="550">
         </iframe>
 
+        </div>
       </div>
     </div>
   </section>
@@ -381,7 +380,9 @@
     <div class="container is-max-desktop content">
       <h2 class="title">Acknowledgment</h2>
       <p>
-        xxx
+        This work has been supported by the US National Science Foun-
+dation under grant numbers IIS-1910766, IIS- 20-41415, and IIS-21-
+14451.
       </p>
     </div>
   </section>
@@ -392,7 +393,6 @@
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
                 target="_blank">Academic Project Page Template</a> which was adopted from the <a
